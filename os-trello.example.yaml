@@ -1,0 +1,36 @@
+---
+
+trello:
+  # the key from https://trello.com/app-key
+  key:
+  # token will be generated when using os-trello-init for the first time
+  token:
+  # the short token in the URL
+  board_id:
+  label_colors:
+    bug: red
+    code: blue
+    review: green
+    project: black
+
+gerrit:
+  base_url: https://review.openstack.org
+  # your gerrit username and password from
+  #   https://review.openstack.org/#/settings/http-password
+  username:
+  password:
+  queries:
+    - "is:starred"
+    - "owner:self is:open"
+
+launchpad:
+  # your Launchpad username
+  username:
+
+logging:
+  version: 1
+  loggers:
+    requests.packages.urllib3:
+      level: WARNING
+    os_trello:
+      level: WARNING

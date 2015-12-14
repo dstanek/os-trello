@@ -1,0 +1,4 @@
+CacheControl==0.11.5
+PyYAML==3.11
+requests_oauthlib==0.6.0
+six==1.10.0
