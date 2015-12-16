@@ -255,6 +255,12 @@ def main():
     orphaned_card_numbers = (all_trello_cards -
                              touched_change_numbers -
                              touched_bug_numbers)
+    if None in orphaned_card_numbers:
+        # NOTE: None is the result of adding a card by hand that doesn't
+        # conform to the naming conventions used by the Gerrit and
+        # Launchpad cards. We manually added these so we should also manually
+        # delete them.
+        orphaned_card_numbers.remove(None)
     for number in orphaned_card_numbers:
         logger.info('removing orphaned Trello card: %s', number)
         t.cards.get(number).delete()

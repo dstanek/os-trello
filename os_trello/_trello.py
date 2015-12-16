@@ -53,7 +53,8 @@ class CardEntity(_utils.Entity):
         match = re.match(r'^Bug #(\d+).*', self._data['name'])
         if match:
             return 'lp:' + match.groups()[0]
-        raise Exception('unmanaged card? %s' % self._data['name'])
+        # TODO: maybe we need to do somethings smarter?
+        # raise Exception('unmanaged card? %s' % self._data['name'])
 
     @property
     def label_ids(self):
