@@ -70,23 +70,23 @@ Getting Started
 These instructions assume that you already have os-trello installed.
 
 1. Go create a new Trello board (I named mine 'OpenStack')
-2. Create the ~/.config/os-trello directory
-3. Copy the example config `os-trello.example.yaml` to
-   `~/.config/os-trello/os-trello.yaml`
+2. Create the ``~/.config/os-trello`` directory
+3. Copy the example config ``os-trello.example.yaml`` to
+   ``~/.config/os-trello/os-trello.yaml``
 4. Edit the config
 
-   a. Set the Trello key (can be found here: https://trello.com/app-key)
+   a. Set the `Trello key <https://trello.com/app-key>`_
    b. Set the Trello board_id to the short code found in the address bar of
       your browser when you are viewing your board (mine from the link above
       is 'kAcLdBiq')
-   c. Set your gerrit username/password (they can be found here:
-      https://review.openstack.org/#/settings/http-password)
+   c. Set your `gerrit username/password
+      <https://review.openstack.org/#/settings/http-password>`_
    d. Set your launchpad username
 
-5. Run `os-trello-init` and follow the instructions for authorizing the
+5. Run ``os-trello-init`` and follow the instructions for authorizing the
    application with Trello
 6. Set the Trello token to the value you received in the previous step
-7. Run `os-trello-init` again to actually setup the Trello board
-8. Run `os-trello-sync` to sync
+7. Run ``os-trello-init`` again to actually setup the Trello board
+8. Run ``os-trello-sync`` to sync
 
-I run `os-trello-sync` in a cron that runs once an hour.
+I run ``os-trello-sync`` in a cron that runs once an hour.
