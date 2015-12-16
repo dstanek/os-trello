@@ -213,8 +213,9 @@ def sync_reviews(query, gerrit, trello_board, config):
         touched_change_numbers.add(analyzer.get_number())
         sync_thing(analyzer, trello_board, config)
 
-        if review.status == Status.DONE:
-            gerrit.unstar(review.id)
+        # TODO: determine if I really want to automatically unstar changes
+        # if review.status == Status.DONE:
+        #     gerrit.unstar(review.id)
 
     return touched_change_numbers
 
