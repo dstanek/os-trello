@@ -196,7 +196,7 @@ def sync_thing(analyzer, trello_board, config):
 def sync_reviews(query, gerrit, trello_board, config):
     touched_change_numbers = set()
     for review in gerrit.run_query(query):
-        analyzer = ReviewAnalyzer(review, 'dstanek')
+        analyzer = ReviewAnalyzer(review, config['gerrit.username'])
         logger.debug('Processing %s', analyzer.get_number())
         touched_change_numbers.add(analyzer.get_number())
         sync_thing(analyzer, trello_board, config)
