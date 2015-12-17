@@ -109,15 +109,6 @@ class BugAnalizer(object):
     def __init__(self, bug):
         self._bug = bug
 
-    def _i_am_an_author(self):
-        raise Exception
-        if self._review._data['owner'].get('username') == self._username:
-            return True
-        if self._review._data['owner']['email'] == self._email:
-            return True
-        # TODO: if i have submitted a review or am listed as the co-author
-        return False
-
     def get_number(self):
         return 'lp:' + self._bug.number
 
