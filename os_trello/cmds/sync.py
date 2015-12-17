@@ -35,10 +35,9 @@ class Status:
 
 class ReviewAnalyzer(object):
 
-    def __init__(self, review, username, email):
+    def __init__(self, review, username):
         self._review = review
         self._username = username
-        self._email = email
 
     def _i_am_an_author(self):
         if self._review._data['owner']['username'] == self._username:
@@ -206,7 +205,7 @@ def sync_thing(analyzer, trello_board, config):
 def sync_reviews(query, gerrit, trello_board, config):
     touched_change_numbers = set()
     for review in gerrit.run_query(query):
-        analyzer = ReviewAnalyzer(review, 'dstanek', 'dstanek@dstanek.com')
+        analyzer = ReviewAnalyzer(review, 'dstanek')
         logger.debug('Processing %s', analyzer.get_number())
         touched_change_numbers.add(analyzer.get_number())
         sync_thing(analyzer, trello_board, config)
