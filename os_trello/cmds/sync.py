@@ -41,9 +41,7 @@ class ReviewAnalyzer(object):
         self._email = email
 
     def _i_am_an_author(self):
-        if self._review._data['owner'].get('username') == self._username:
-            return True
-        if self._review._data['owner']['email'] == self._email:
+        if self._review._data['owner']['username'] == self._username:
             return True
         # TODO: if i have submitted a review or am listed as the co-author
         return False
